@@ -1,0 +1,42 @@
+/**
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here.
+	// For complete reference see:
+	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
+
+  // Break line
+  config.enterMode = CKEDITOR.ENTER_BR;
+
+	// The toolbar groups arrangement, optimized for a single toolbar row.
+	config.toolbarGroups = [
+	{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+	{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+	{ name: 'forms' },
+	{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+	{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+	{ name: 'links' },
+	{ name: 'insert' },
+	{ name: 'styles' },
+	{ name: 'colors' },
+	{ name: 'tools' },
+	{ name: 'others' },
+	{ name: 'about' }
+	];
+	config.forcePasteAsPlainText = true;
+
+	// The default plugins included in the basic setup define some buttons that
+	// are not needed in a basic editor. They are removed here.
+
+
+	// Dialog windows are also simplified.
+	config.removeDialogTabs = 'link:advanced;image:advanced';
+	config.filebrowserUploadUrl = '/posts/image';// api upload image.
+	config.extraPlugins = 'magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,sourcedialog,image2,dialog,dialogui';
+	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
+	config.toolbarLocation = 'bottom';
+  config.autoGrow_bottomSpace = 50;
+};
