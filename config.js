@@ -8,15 +8,16 @@ CKEDITOR.editorConfig = function( config ) {
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
-  // Break line
-  config.enterMode = CKEDITOR.ENTER_BR;
+    // Break line
+    config.enterMode = CKEDITOR.ENTER_BR;
+	config.shiftEnterMode = CKEDITOR.ENTER_P;
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
 	{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 	{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 	{ name: 'forms' },
-	{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+	// { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 	{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 	{ name: 'links' },
 	{ name: 'insert' },
@@ -35,8 +36,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced;image:advanced';
 	config.filebrowserUploadUrl = '/posts/image';// api upload image.
-	config.extraPlugins = 'magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,sourcedialog,image2,dialog,dialogui';
+	config.extraPlugins = 'kbd,magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,sourcedialog,image2,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	config.toolbarLocation = 'bottom';
-  config.autoGrow_bottomSpace = 50;
+    config.autoGrow_bottomSpace = 50;
 };
