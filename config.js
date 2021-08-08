@@ -40,4 +40,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
+	config.format_tags = 'h1;h2';
 };
