@@ -9,8 +9,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
     // Break line
-    config.enterMode = CKEDITOR.ENTER_BR;
-	config.shiftEnterMode = CKEDITOR.ENTER_P;
+    // config.enterMode = CKEDITOR.ENTER_BR;
+	// config.shiftEnterMode = CKEDITOR.ENTER_P;
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
@@ -36,7 +36,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced;image:advanced';
 	config.filebrowserUploadUrl = '/posts/image';// api upload image.
-	config.extraPlugins = 'sourcearea,kbd,magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
+	config.extraPlugins = 'sourcearea,autolink,textmatch,kbd,magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
