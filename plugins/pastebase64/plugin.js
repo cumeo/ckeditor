@@ -70,6 +70,7 @@
       .then((data) => {
         var element = editor.document.createElement("img", {
           attributes: {
+            alt:"", // better empty alt than without it.
             src: data.url,
           },
         });
