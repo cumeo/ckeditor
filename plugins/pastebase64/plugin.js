@@ -4,6 +4,11 @@
   CKEDITOR.plugins.add("pastebase64", {
     init: init,
   });
+  var editor = CKEDITOR.instances.content;
+  editor.on("paste", function (evt) {
+    var file = evt.data.dataTransfer._.files[0];
+    sendBlobImageToServer(file, editor);
+  });
 
   function init(editor) {
     if (editor.addFeature) {
@@ -11,51 +16,9 @@
         allowedContent: "img[alt,id,!src]{width,height};",
       });
     }
-
-    editor.on("contentDom", function () {
-      var editableElement = editor.editable
-        ? editor.editable()
-        : editor.document;
-      editableElement.on("paste", onPaste, null, { editor: editor });
-    });
   }
 
-  function onPaste(event) {
-    var editor = event.listenerData && event.listenerData.editor;
-    var $event = event.data.$;
-    var clipboardData = $event.clipboardData;
-    var found = false;
-    var imageType = /^image/;
-
-    if (!clipboardData) {
-      return;
-    }
-
-    return Array.prototype.forEach.call(
-      clipboardData.types,
-      function (type, i) {
-        if (found) {
-          return;
-        }
-
-        if (
-          type.match(imageType) ||
-          clipboardData.items[i].type.match(imageType)
-        ) {
-          console.log(clipboardData.items[i]);
-          sendBlobImageToServer(clipboardData.items[i], editor);
-          return (found = true);
-        }
-      }
-    );
-  }
-
-  function sendBlobImageToServer(item, editor) {
-    if (!item || typeof item.getAsFile !== "function") {
-      return;
-    }
-
-    var file = item.getAsFile();
+  function sendBlobImageToServer(file, editor) {
     var formData = new FormData();
     formData.append("upload", file);
     for (var pair of formData.entries()) {
