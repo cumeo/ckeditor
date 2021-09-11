@@ -7,7 +7,9 @@
   var editor = CKEDITOR.instances.content;
   editor.on("paste", function (evt) {
     var file = evt.data.dataTransfer._.files[0];
-    sendBlobImageToServer(file, editor);
+    if (file && file.type.match("image/png")) {
+      sendBlobImageToServer(file, editor);
+    }
   });
 
   function init(editor) {
@@ -33,7 +35,7 @@
       .then((data) => {
         var element = editor.document.createElement("img", {
           attributes: {
-            alt:"", // better empty alt than without it.
+            alt: "", // better empty alt than without it.
             src: data.url,
           },
         });
