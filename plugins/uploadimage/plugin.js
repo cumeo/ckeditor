@@ -81,13 +81,8 @@
 				onUploaded: function( upload ) {
 					// Width and height could be returned by server (https://dev.ckeditor.com/ticket/13519).
 					var $img = this.parts.img.$,
-						width = upload.responseData.width || $img.naturalWidth,
-						height = upload.responseData.height || $img.naturalHeight;
-
 					// Set width and height to prevent blinking.
-					this.replaceWith( '<img src="' + upload.url + '" ' +
-						'width="' + width + '" ' +
-						'height="' + height + '">' );
+					this.replaceWith( '<img alt ="" src="' + upload.url + '" ');
 				}
 			} );
 

@@ -96,7 +96,6 @@
 
 				try {
 					var response = JSON.parse( xhr.responseText );
-					console.log(response);
 
 					// Error message does not need to mean that upload finished unsuccessfully.
 					// It could mean that ex. file name was changes during upload due to naming collision.
@@ -314,7 +313,6 @@
 		this.status = 'created';
 
 		this.abort = function() {
-			console.log('fuck');
 			this.changeStatus( 'abort' );
 		};
 	}
