@@ -80,7 +80,6 @@
 
 				onUploaded: function( upload ) {
 					// Width and height could be returned by server (https://dev.ckeditor.com/ticket/13519).
-					var $img = this.parts.img.$,
 					// Set width and height to prevent blinking.
 					this.replaceWith( '<img alt ="" src="' + upload.url + '" ');
 				}
