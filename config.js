@@ -36,7 +36,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced;image:advanced';
 	config.filebrowserUploadUrl = '/posts/image';// api upload image.
-	config.extraPlugins = 'sourcearea,autolink,textmatch,kbd,magicline,autogrow,resize,pastebase64,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
+	config.uploadUrl = '/posts/image-clipboard';
+	config.extraPlugins = 'uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,magicline,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
