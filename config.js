@@ -38,10 +38,11 @@ CKEDITOR.editorConfig = function( config ) {
 	config.magicline_everywhere = true;
 	config.filebrowserUploadUrl = '/posts/image';// api upload image.
 	config.uploadUrl = '/posts/image-clipboard';
-	config.extraPlugins = 'magicline,uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
+	config.extraPlugins = 'magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
+	config.allowedContent = true;
 	config.autoGrow_maxHeight = 400;
 	config.format_tags = 'h2;h3';
 };
