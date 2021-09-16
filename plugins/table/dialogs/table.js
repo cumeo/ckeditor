@@ -286,7 +286,7 @@
 						{
 							type: 'text',
 							id: 'txtCols',
-							'default': 2,
+							'default': 3,
 							label: editor.lang.table.columns,
 							required: true,
 							controlStyle: 'width:5em',
@@ -304,7 +304,7 @@
 							type: 'select',
 							id: 'selHeaders',
 							requiredContent: 'th',
-							'default': '',
+							'default': 'row',
 							label: editor.lang.table.headers,
 							items: [
 								[ editor.lang.table.headersNone, '' ],
