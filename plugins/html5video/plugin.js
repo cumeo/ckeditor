@@ -38,8 +38,8 @@ CKEDITOR.plugins.add( 'html5video', {
                     allowdownload = !this.element.getChild( 0 ).getAttribute( 'controlslist' );
                     loop = this.element.getChild( 0 ).getAttribute( 'loop' );
                     advisorytitle = this.element.getChild( 0 ).getAttribute( 'title' );
-                    controls = this.element.getChild(0).getAttribute('controls');
-					responsive = this.element.getAttribute( 'data-responsive' );
+                    controls = 'controls';
+					responsive = 'true';
                     poster = this.element.getChild( 0 ).getAttribute( 'poster' );
                 }
 
@@ -97,9 +97,7 @@ CKEDITOR.plugins.add( 'html5video', {
                         // Create a new <video> element.
                         var videoElement = new CKEDITOR.dom.element( 'video' );
                         // Set the controls attribute.
-                        if (this.data.controls) {
-                            videoElement.setAttribute('controls', 'controls');
-                        }
+                        videoElement.setAttribute('controls', 'controls');
                         // Append it to the container of the plugin.
                         this.element.append( videoElement );
                     }
@@ -107,15 +105,11 @@ CKEDITOR.plugins.add( 'html5video', {
                     if (this.data.width) this.element.getChild( 0 ).setAttribute( 'width', this.data.width );
                     if (this.data.height) this.element.getChild( 0 ).setAttribute( 'height', this.data.height );
 
-                    if ( this.data.responsive ) {
-                            this.element.setAttribute("data-responsive", this.data.responsive);
-                            this.element.getChild( 0 ).setStyle( 'max-width', '100%' );
-                            this.element.getChild( 0 ).setStyle( 'height', 'auto' );
-                    } else {
-			    this.element.removeAttribute("data-responsive");
-                            this.element.getChild( 0 ).removeStyle( 'max-width' );
-                            this.element.getChild( 0 ).removeStyle( 'height' );
-                    }
+ 
+                    this.element.setAttribute("data-responsive", "true");
+                    this.element.getChild( 0 ).setStyle( 'max-width', '700px' );
+                    this.element.getChild( 0 ).setStyle( 'height', 'auto' );
+                  
 
                     if (this.data.poster) this.element.getChild( 0 ).setAttribute('poster', this.data.poster);								
                 }
@@ -163,11 +157,6 @@ CKEDITOR.plugins.add( 'html5video', {
                         this.element.getChild( 0 ).removeAttribute( 'title' );
                     }
 
-                    if (this.data.controls) {
-                        this.element.getChild(0).setAttribute('controls', 'controls');
-                    } else {
-                        this.element.getChild(0).removeAttribute('controls');
-                    }
                 }
             }
         } );

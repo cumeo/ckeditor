@@ -3,6 +3,7 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
         title: editor.lang.html5video.title,
         minWidth: 500,
         minHeight: 100,
+        maxWidth: 700,
         contents: [ {
             id: 'info',
             label: editor.lang.html5video.infoLabel,
@@ -42,17 +43,6 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                 } ]
             },
             {
-                type: 'checkbox',
-                id: 'responsive',
-                label: editor.lang.html5video.responsive,
-                setup: function( widget ) {
-                    this.setValue( widget.data.responsive );
-                },
-                commit: function( widget ) {
-                    widget.setData( 'responsive', this.getValue()?'true':'' );
-                }
-            },
-            {
                 type: 'vbox',
                 padding: 0,
                 
@@ -83,17 +73,6 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                         filebrowser:{action:"Browse",target:"info:poster",url:editor.config.filebrowserImageBrowseUrl}
                     } ]
                 }]
-            },
-            {
-                type: 'checkbox',
-                id: 'controls',
-                label: editor.lang.html5video.controls,
-                setup: function (widget) {
-                    this.setValue(widget.data.controls);
-                },
-                commit: function (widget) {
-                    widget.setData('controls', this.getValue() ? 'true' : '');
-                }
             },
             {
                 type: 'hbox',
@@ -140,7 +119,7 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                         [editor.lang.common.alignRight, 'right'],
                         [editor.lang.common.alignNone, 'none']
                     ],
-                    'default': 'center',
+                    'default': 'none',
                     setup: function( widget ) {
                         if ( widget.data.align ) {
                             this.setValue( widget.data.align );
@@ -225,7 +204,7 @@ CKEDITOR.dialog.add( 'html5video', function( editor ) {
                             [editor.lang.html5video.yes, 'yes'],
                             [editor.lang.html5video.no, 'no']
                         ],
-                        'default': 'no',
+                        'default': 'yes',
                         setup: function( widget ) {
                             if ( widget.data.allowdownload ) {
                                 this.setValue(widget.data.allowdownload);
