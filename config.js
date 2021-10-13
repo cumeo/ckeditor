@@ -38,8 +38,9 @@ CKEDITOR.editorConfig = function( config ) {
 	config.magicline_everywhere = true;
 	config.filebrowserUploadUrl = '/posts/video';// api upload image.
 	config.filebrowserImageUploadUrl = '/posts/image';// api upload image.
+	config.fileUploadURL = '/posts/file';// api upload file.
 	config.uploadUrl = '/posts/image-clipboard';
-	config.extraPlugins = 'simage,html5video,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
+	config.extraPlugins = 'anyfile,html5video,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
@@ -47,3 +48,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.autoGrow_maxHeight = 400;
 	config.format_tags = 'h2;h3';
 };
+// allow i tag (fontawsome icon) in ckeditor.
+CKEDITOR.dtd.$removeEmpty['i'] = false;

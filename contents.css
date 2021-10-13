@@ -221,3 +221,8 @@ kbd {
     vertical-align: middle;
     border-radius: 3px;
 }
+
+video, iframe {
+    max-width: 100% !important;
+    max-height: 56.25vw !important;
+}
