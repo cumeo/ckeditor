@@ -42,7 +42,7 @@ CKEDITOR.plugins.add("anyfile", {
                       CKEDITOR.dom.element.createFromHtml("<br>");
                     let fileElem ='';
                     if (data.type.match("image.*")) {
-                      fileElem = `<img src="${url}">`;
+                      fileElem = `<img data-enlargeable style="cursor: zoom-in" src="${url}">`;
                     } 
                     else if (data.type.match("video.*")) {
                       fileElem = `<div class="ckeditor-html5-video" data-responsive="true">

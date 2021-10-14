@@ -18,14 +18,11 @@ CKEDITOR.editorConfig = function( config ) {
 	{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 	{ name: 'forms' },
 	// { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-	{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-	{ name: 'links' },
+	{ name: 'paragraph',   groups: [ 'list', 'blocks', 'align', 'bidi' ] },
 	{ name: 'insert' },
 	{ name: 'styles' },
-	{ name: 'colors' },
 	{ name: 'tools' },
-	{ name: 'others' },
-	{ name: 'about' }
+	{ name: 'others' }
 	];
 	config.forcePasteAsPlainText = true;
 
@@ -35,12 +32,14 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced;image:advanced';
+	config.removePlugins = 'image';
+	config.removeButtons = 'Anchor,link,unlink,NumberedList';
 	config.magicline_everywhere = true;
 	config.filebrowserUploadUrl = '/posts/video';// api upload image.
-	config.filebrowserImageUploadUrl = '/posts/image';// api upload image.
+	// config.filebrowserImageUploadUrl = '/posts/image';// api upload image.
 	config.fileUploadURL = '/posts/file';// api upload file.
 	config.uploadUrl = '/posts/image-clipboard';
-	config.extraPlugins = 'anyfile,html5video,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,sourcearea,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,image2,dialog,dialogui';
+	config.extraPlugins = 'anyfile,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
