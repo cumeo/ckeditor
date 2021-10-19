@@ -81,7 +81,7 @@
 				onUploaded: function( upload ) {
 					// Width and height could be returned by server (https://dev.ckeditor.com/ticket/13519).
 					// Set width and height to prevent blinking.
-					this.replaceWith( '<img alt ="" src="' + upload.url + '" ');
+					this.replaceWith( '<img data-enlargeable style="cursor: zoom-in" alt ="" src="' + upload.url + '" ');
 				}
 			} );
 
