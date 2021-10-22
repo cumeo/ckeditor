@@ -5,7 +5,6 @@ CKEDITOR.plugins.add( 'contents', {
 
 	init: function( editor ) {
         editor.addContentsCss( this.path + 'styles/styles.css' );
-		CKEDITOR.dialog.add( 'contents', this.path + 'dialogs/contents.js' );
 
         editor.widgets.add( 'contents', {
 			button: 'Insert Table of Contents',
@@ -17,9 +16,6 @@ CKEDITOR.plugins.add( 'contents', {
             allowedContent:
             'div(!widget-toc,float-left,float-right,align-center);' +
             'p(!toc-title);',
-
-
-            dialog: 'contents',
 
 			upcast: function( element ) {
 				return element.name == 'div'
