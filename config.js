@@ -32,20 +32,20 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced;image:advanced';
-	config.removePlugins = 'image';
-	config.removeButtons = 'Anchor,link,unlink,NumberedList';
+	config.removePlugins = 'image,format';
+	config.removeButtons = 'Anchor,link,unlink,NumberedList,Format';
 	config.magicline_everywhere = true;
 	config.filebrowserUploadUrl = '/posts/video';// api upload image.
 	// config.filebrowserImageUploadUrl = '/posts/image';// api upload image.
 	config.fileUploadURL = '/posts/file';// api upload file.
 	config.uploadUrl = '/posts/image-clipboard';
-	config.extraPlugins = 'contents,anyfile,blockquote,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,dialog,dialogui';
+	config.extraPlugins = 'h2,h3,contents,anyfile,blockquote,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
 	config.allowedContent = true;
 	config.autoGrow_maxHeight = 400;
-	config.format_tags = 'h2;h3';
+	// config.format_tags = 'h2;h3';
 };
 // allow i tag (fontawsome icon) in ckeditor.
 CKEDITOR.dtd.$removeEmpty['i'] = false;
