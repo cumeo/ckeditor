@@ -80,7 +80,7 @@ function buildToc(element){
 
 
 
-    element.setHtml('<p class="toc-title">Contents</p>');
+    element.setHtml('<p class="toc-title">Table of contents</p>');
     Container = new CKEDITOR.dom.element( 'ol' );
     Container.appendTo(element);
 
