@@ -25,6 +25,7 @@ CKEDITOR.editorConfig = function( config ) {
 	{ name: 'others' }
 	];
 	config.forcePasteAsPlainText = true;
+	config.disableNativeSpellChecker = false;
 
 	// The default plugins included in the basic setup define some buttons that
 	// are not needed in a basic editor. They are removed here.
@@ -39,7 +40,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.filebrowserImageUploadUrl = '/posts/image';// api upload image.
 	config.fileUploadURL = '/posts/file';// api upload file.
 	config.uploadUrl = '/posts/image-clipboard';
-	config.extraPlugins = 'wordcount,h2,h3,contents,anyfile,blockquote,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,dialog,dialogui';
+	config.extraPlugins = 'scayt,wordcount,h2,h3,contents,anyfile,blockquote,magicline,tablewraper,table,tabletools,contextmenu,menu,uploadimage,uploadwidget,filetools,notificationaggregator,autolink,textmatch,kbd,autogrow,resize,codesnippet,widget,lineutils,notification,toolbar,button,widgetselection,dialog,dialogui';
 	config.basicEntities = false;// How to prevent CKEditor replacing spaces with &nbsp;?
 	// config.toolbarLocation = 'bottom';
     config.autoGrow_bottomSpace = 50;
